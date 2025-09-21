@@ -7,8 +7,8 @@
  *  http://www.apache.org/licenses/LICENSE-2.0
  */
 
-#ifndef OPENSSL_EVP_H
-#define OPENSSL_EVP_H
+#ifndef GM_OPENGM_SSL_GM_EVP_H
+#define GM_OPENGM_SSL_GM_EVP_H
 
 #include <gmssl/sm2.h>
 #include <gmssl/sm3.h>
@@ -21,36 +21,36 @@ extern "C" {
 typedef void ENGINE;
 
 
-// make `const EVP_MD *` into `const char *` string
-typedef char EVP_MD;
+// make `const GM_EVP_MD *` into `const char *` string
+typedef char GM_EVP_MD;
 
-typedef SM3_DIGEST_CTX EVP_MD_CTX;
+typedef GM_SM3_GM_DIGEST_CTX GM_EVP_MD_CTX;
 
 
-#define EVP_MAX_MD_SIZE 64
+#define GM_EVP_MAX_MD_SIZE 64
 
-const EVP_MD *EVP_sm3(void);
-const EVP_MD *EVP_sha1(void);
-const EVP_MD *EVP_sha256(void);
+const GM_EVP_MD *GM_EVP_sm3(void);
+const GM_EVP_MD *GM_EVP_sha1(void);
+const GM_EVP_MD *GM_EVP_sha256(void);
 
-EVP_MD_CTX *EVP_MD_CTX_new(void);
-int EVP_DigestInit_ex(EVP_MD_CTX *ctx, const EVP_MD *type, ENGINE *engine);
-int EVP_DigestUpdate(EVP_MD_CTX *ctx, const void *d, size_t cnt);
-int EVP_DigestFinal_ex(EVP_MD_CTX *ctx, unsigned char *md,unsigned int *s);
-void EVP_MD_CTX_free(EVP_MD_CTX *ctx);
+GM_EVP_MD_CTX *GM_EVP_MD_CTX_new(void);
+int GM_EVP_DigestInit_ex(GM_EVP_MD_CTX *ctx, const GM_EVP_MD *type, ENGINE *engine);
+int GM_EVP_DigestUpdate(GM_EVP_MD_CTX *ctx, const void *d, size_t cnt);
+int GM_EVP_DigestFinal_ex(GM_EVP_MD_CTX *ctx, unsigned char *md,unsigned int *s);
+void GM_EVP_MD_CTX_free(GM_EVP_MD_CTX *ctx);
 
-#define EVP_MD_CTX_create() EVP_MD_CTX_new()
-#define EVP_MD_CTX_destroy(ctx) EVP_MD_CTX_free(ctx);
+#define GM_EVP_MD_CTX_create() GM_EVP_MD_CTX_new()
+#define GM_EVP_MD_CTX_destroy(ctx) GM_EVP_MD_CTX_free(ctx);
 
 
 
 
 typedef struct {
-	SM2_KEY signkey;
-	SM2_KEY kenckey;
-} EVP_PKEY;
+	GM_SM2_KEY signkey;
+	GM_SM2_KEY kenckey;
+} GM_EVP_PKEY;
 
-void EVP_PKEY_free(EVP_PKEY *key);
+void GM_EVP_PKEY_free(GM_EVP_PKEY *key);
 
 
 

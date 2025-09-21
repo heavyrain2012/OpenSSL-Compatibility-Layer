@@ -7,8 +7,8 @@
  *  http://www.apache.org/licenses/LICENSE-2.0
  */
 
-#ifndef OPENSSL_ERR_H
-#define OPENSSL_ERR_H
+#ifndef GM_OPENGM_SSL_GM_ERR_H
+#define GM_OPENGM_SSL_GM_ERR_H
 
 #include <string.h>
 
@@ -17,25 +17,25 @@ extern "C" {
 #endif
 
 
-unsigned long ERR_get_error(void);
-unsigned long ERR_peek_error(void);
-unsigned long ERR_peek_last_error(void);
-unsigned long ERR_peek_error_data(const char **data, int *flags);
-unsigned long ERR_peek_error_line_data(const char **file, int *line, const char **data, int *flags);
-void ERR_error_string_n(unsigned long e, char *buf, size_t len);
-void ERR_clear_error(void);
+unsigned long GM_ERR_get_error(void);
+unsigned long GM_ERR_peek_error(void);
+unsigned long GM_ERR_peek_last_error(void);
+unsigned long GM_ERR_peek_error_data(const char **data, int *flags);
+unsigned long GM_ERR_peek_error_line_data(const char **file, int *line, const char **data, int *flags);
+void GM_ERR_error_string_n(unsigned long e, char *buf, size_t len);
+void GM_ERR_clear_error(void);
 
-#define PEM_R_NO_START_LINE	1
+#define GM_PEM_R_NO_START_LINE	1
 
 // from openssl/err.h
-#define ERR_LIB_NONE            1
-#define ERR_LIB_PEM             9
+#define GM_ERR_LIB_NONE            1
+#define GM_ERR_LIB_PEM             9
 
-int ERR_GET_LIB(unsigned long e);
-int ERR_GET_REASON(unsigned long e);
+int GM_ERR_GET_LIB(unsigned long e);
+int GM_ERR_GET_REASON(unsigned long e);
 
-// who use this?			
-# define ERR_TXT_STRING          0x02
+// who use this?
+# define GM_ERR_TXT_STRING          0x02
 
 
 

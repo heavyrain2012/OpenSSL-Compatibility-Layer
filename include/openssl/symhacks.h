@@ -7,8 +7,8 @@
  *  http://www.apache.org/licenses/LICENSE-2.0
  */
 
-#ifndef OPENSSL_SYMHACKS_H
-#define OPENSSL_SYMHACKS_H
+#ifndef GM_OPENGM_SSL_SYMHACKS_H
+#define GM_OPENGM_SSL_SYMHACKS_H
 
 
 #ifdef __cplusplus

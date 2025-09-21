@@ -7,8 +7,8 @@
  *  http://www.apache.org/licenses/LICENSE-2.0
  */
 
-#ifndef OPENSSL_CONF_H
-#define OPENSSL_CONF_H
+#ifndef GM_OPENGM_SSL_CONF_H
+#define GM_OPENGM_SSL_CONF_H
 
 
 #ifdef __cplusplus
@@ -16,8 +16,8 @@ extern "C" {
 #endif
 
 
-#define OPENSSL_NO_ENGINE
-#define OPENSSL_NO_OCSP
+#define GM_OPENGM_SSL_NO_ENGINE
+#define GM_OPENGM_SSL_NO_OCSP
 
 
 #ifdef __cplusplus

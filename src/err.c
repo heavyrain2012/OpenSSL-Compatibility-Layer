@@ -15,29 +15,29 @@
 
 
 // 0 means no error
-unsigned long ERR_get_error(void)
+unsigned long GM_ERR_get_error(void)
 {
 	return 0;
 }
 
-unsigned long ERR_peek_error(void)
+unsigned long GM_ERR_peek_error(void)
 {
 	return 0;
 }
 
-unsigned long ERR_peek_last_error(void)
+unsigned long GM_ERR_peek_last_error(void)
 {
 	return 0;
 }
 
-unsigned long ERR_peek_error_data(const char **data, int *flags)
+unsigned long GM_ERR_peek_error_data(const char **data, int *flags)
 {
 	if (data) *data = NULL;
 	if (flags) *flags = 0;
 	return 0;
 }
 
-unsigned long ERR_peek_error_line_data(const char **file, int *line, const char **data, int *flags)
+unsigned long GM_ERR_peek_error_line_data(const char **file, int *line, const char **data, int *flags)
 {
 	if (file) *file = NULL;
 	if (line) *line = 0;
@@ -46,23 +46,23 @@ unsigned long ERR_peek_error_line_data(const char **file, int *line, const char 
 	return 0;
 }
 
-void ERR_error_string_n(unsigned long e, char *buf, size_t len)
+void GM_ERR_error_string_n(unsigned long e, char *buf, size_t len)
 {
 	buf[0] = 0;
 }
 
-void ERR_clear_error(void)
+void GM_ERR_clear_error(void)
 {
 }
 
-// Nginx `PEM_read_bio_X509`, when `eof(bio)`, check this to clear error
-int ERR_GET_LIB(unsigned long e)
+// Nginx `GM_PEM_read_bio_X509`, when `eof(bio)`, check this to clear error
+int GM_ERR_GET_LIB(unsigned long e)
 {
-	return ERR_LIB_PEM;
+	return GM_ERR_LIB_PEM;
 }
 
-// Nginx `PEM_read_bio_X509`, when `eof(bio)`, check this to clear error
-int ERR_GET_REASON(unsigned long e)
+// Nginx `GM_PEM_read_bio_X509`, when `eof(bio)`, check this to clear error
+int GM_ERR_GET_REASON(unsigned long e)
 {
-	return PEM_R_NO_START_LINE;
+	return GM_PEM_R_NO_START_LINE;
 }

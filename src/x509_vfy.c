@@ -15,22 +15,22 @@
 #include <openssl/x509_vfy.h>
 
 
-X509_LOOKUP_METHOD *X509_LOOKUP_file(void)
+GM_X509_LOOKUP_METHOD *GM_X509_LOOKUP_file(void)
 {
 	return NULL;
 }
 
-int X509_LOOKUP_load_file(X509_LOOKUP *ctx, char *name, long type)
+int GM_X509_LOOKUP_load_file(GM_X509_LOOKUP *ctx, char *name, long type)
 {
 	return 1;
 }
 
-X509_LOOKUP *X509_STORE_add_lookup(X509_STORE *store, X509_LOOKUP_METHOD *meth)
+GM_X509_LOOKUP *GM_X509_STORE_add_lookup(GM_X509_STORE *store, GM_X509_LOOKUP_METHOD *meth)
 {
 	return NULL;
 }
 
-int X509_STORE_set_flags(X509_STORE *xs, unsigned long flags)
+int GM_X509_STORE_set_flags(GM_X509_STORE *xs, unsigned long flags)
 {
 	return 1;
 }

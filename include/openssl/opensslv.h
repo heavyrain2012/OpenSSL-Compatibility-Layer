@@ -7,8 +7,8 @@
  *  http://www.apache.org/licenses/LICENSE-2.0
  */
 
-#ifndef OPENSSL_OPENSSLV_H
-#define OPENSSL_OPENSSLV_H
+#ifndef GM_OPENGM_SSL_OPENSSLV_H
+#define GM_OPENGM_SSL_OPENSSLV_H
 
 #include <gmssl/version.h>
 
@@ -17,12 +17,12 @@ extern "C" {
 #endif
 
 
-#define GMSSL_OCL_VERSION_STR	"GmSSL OCL 0.8.1"
+#define GM_GMGM_SSL_OCL_VERSION_STR	"GmSSL OCL 0.8.1"
 
-#define OPENSSL_VERSION_NUMBER	0x30000000L
-#define OPENSSL_VERSION_TEXT	GMSSL_VERSION_STR
-#define OpenSSL_version(num)	GMSSL_VERSION_STR
-#define SSLeay_version(num)	GMSSL_VERSION_STR
+#define GM_OPENGM_SSL_VERSION_NUMBER	0x30000000L
+#define GM_OPENGM_SSL_VERSION_TEXT	GM_GMGM_SSL_VERSION_STR
+#define GM_OpenGM_SSL_version(num)	GM_GMGM_SSL_VERSION_STR
+#define GM_SSLeay_version(num)	GM_GMGM_SSL_VERSION_STR
 
 #ifdef __cplusplus
 }

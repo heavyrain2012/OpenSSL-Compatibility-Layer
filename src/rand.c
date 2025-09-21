@@ -16,15 +16,15 @@
 #include <openssl/rand.h>
 
 
-int RAND_bytes(unsigned char *buf, int num)
+int GM_RAND_bytes(unsigned char *buf, int num)
 {
 	if (!buf) {
-		error_print();
+		gm_error_print();
 		return 0;
 	}
 
-	if (rand_bytes(buf, (size_t)num) != 1) {
-		error_print();
+	if (gm_rand_bytes(buf, (size_t)num) != 1) {
+		gm_error_print();
 		return 0;
 	}
 	return 1;

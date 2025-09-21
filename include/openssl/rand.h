@@ -7,8 +7,8 @@
  *  http://www.apache.org/licenses/LICENSE-2.0
  */
 
-#ifndef OPENSSL_RAND_H
-#define OPENSSL_RAND_H
+#ifndef GM_OPENGM_SSL_GM_RAND_H
+#define GM_OPENGM_SSL_GM_RAND_H
 
 
 #ifdef __cplusplus
@@ -16,7 +16,7 @@ extern "C" {
 #endif
 
 
-int RAND_bytes(unsigned char *buf, int nun);
+int GM_RAND_bytes(unsigned char *buf, int nun);
 
 
 #ifdef __cplusplus

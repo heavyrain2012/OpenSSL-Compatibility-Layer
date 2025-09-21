@@ -7,8 +7,8 @@
  *  http://www.apache.org/licenses/LICENSE-2.0
  */
 
-#ifndef OPENSSL_DH_H
-#define OPENSSL_DH_H
+#ifndef GM_OPENGM_SSL_GM_DH_H
+#define GM_OPENGM_SSL_GM_DH_H
 
 
 #ifdef __cplusplus
@@ -18,9 +18,9 @@ extern "C" {
 
 typedef struct {
 	int a;
-} DH;
+} GM_DH;
 
-void DH_free(DH *);
+void GM_DH_free(GM_DH *);
 
 
 

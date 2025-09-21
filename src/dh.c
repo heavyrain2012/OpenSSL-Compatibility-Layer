@@ -12,7 +12,7 @@
 #include <openssl/dh.h>
 
 
-void DH_free(DH *dh)
+void GM_DH_free(GM_DH *dh)
 {
 	if (dh) {
 		free(dh);

@@ -7,8 +7,8 @@
  *  http://www.apache.org/licenses/LICENSE-2.0
  */
 
-#ifndef OPENSSL_CRYPTO_H
-#define OPENSSL_CRYPTO_H
+#ifndef GM_OPENGM_SSL_GM_CRYPTO_H
+#define GM_OPENGM_SSL_GM_CRYPTO_H
 
 #include <openssl/opensslv.h>
 
@@ -17,24 +17,24 @@ extern "C" {
 #endif
 
 
-void OPENSSL_free(void *p);
+void GM_OPENGM_SSL_free(void *p);
 
 typedef struct {
 	const char *appname;
-} OPENSSL_INIT_SETTINGS;
+} GM_OPENGM_SSL_INIT_SETTINGS;
 
-#define OPENSSL_INIT_LOAD_CONFIG (0x00000040L)
+#define GM_OPENGM_SSL_INIT_LOAD_CONFIG (0x00000040L)
 
-OPENSSL_INIT_SETTINGS *OPENSSL_INIT_new(void);
-int OPENSSL_INIT_set_config_appname(OPENSSL_INIT_SETTINGS *init, const char* name);
-void OPENSSL_INIT_free(OPENSSL_INIT_SETTINGS *init);
+GM_OPENGM_SSL_INIT_SETTINGS *GM_OPENGM_SSL_INIT_new(void);
+int GM_OPENGM_SSL_INIT_set_config_appname(GM_OPENGM_SSL_INIT_SETTINGS *init, const char* name);
+void GM_OPENGM_SSL_INIT_free(GM_OPENGM_SSL_INIT_SETTINGS *init);
 
 
-typedef void CRYPTO_EX_DATA;
+typedef void GM_CRYPTO_EX_DATA;
 
-typedef void CRYPTO_EX_new(void *parent, void *ptr, CRYPTO_EX_DATA *ad, int idx, long argl, void *argp);
-typedef void CRYPTO_EX_free(void *parent, void *ptr, CRYPTO_EX_DATA *ad, int idx, long argl, void *argp);
-typedef int CRYPTO_EX_dup(CRYPTO_EX_DATA *to, const CRYPTO_EX_DATA *from, void **from_d, int idx, long argl, void *argp);
+typedef void GM_CRYPTO_EX_new(void *parent, void *ptr, GM_CRYPTO_EX_DATA *ad, int idx, long argl, void *argp);
+typedef void GM_CRYPTO_EX_free(void *parent, void *ptr, GM_CRYPTO_EX_DATA *ad, int idx, long argl, void *argp);
+typedef int GM_CRYPTO_EX_dup(GM_CRYPTO_EX_DATA *to, const GM_CRYPTO_EX_DATA *from, void **from_d, int idx, long argl, void *argp);
 
 
 #ifdef __cplusplus

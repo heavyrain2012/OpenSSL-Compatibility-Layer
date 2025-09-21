@@ -7,8 +7,8 @@
  *  http://www.apache.org/licenses/LICENSE-2.0
  */
 
-#ifndef OPENSSL_RSA_H
-#define OPENSSL_RSA_H
+#ifndef GM_OPENGM_SSL_RSA_H
+#define GM_OPENGM_SSL_RSA_H
 
 
 #ifdef __cplusplus
@@ -18,7 +18,7 @@ extern "C" {
 
 typedef struct {
 	int a;
-} RSA;
+} GM_RSA;
 
 
 #ifdef __cplusplus

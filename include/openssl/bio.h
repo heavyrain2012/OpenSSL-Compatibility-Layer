@@ -7,8 +7,8 @@
  *  http://www.apache.org/licenses/LICENSE-2.0
  */
 
-#ifndef OPENSSL_BIO_H
-#define OPENSSL_BIO_H
+#ifndef GM_OPENGM_SSL_GM_BIO_H
+#define GM_OPENGM_SSL_GM_BIO_H
 
 #include <stdio.h>
 
@@ -16,22 +16,22 @@
 extern "C" {
 #endif
 
-typedef void BIO_METHOD;
+typedef void GM_BIO_METHOD;
 
-const BIO_METHOD *BIO_s_mem(void);
+const GM_BIO_METHOD *GM_BIO_s_mem(void);
 
 
-typedef FILE BIO;
+typedef FILE GM_BIO;
 
-BIO *BIO_new(const BIO_METHOD *meth);
-BIO *BIO_new_mem_buf(const void *buf, int len);
-BIO *BIO_new_file(const char *filename, const char *mode);
-int BIO_read(BIO *bio, void *buf, int len);
-int BIO_write(BIO *bio, const void *buf, int len);
-int BIO_pending(BIO *bio);
-int BIO_reset(BIO *bio);
-int BIO_get_mem_data(BIO *bio, char **pp);
-int BIO_free(BIO *bio);
+GM_BIO *GM_BIO_new(const GM_BIO_METHOD *meth);
+GM_BIO *GM_BIO_new_mem_buf(const void *buf, int len);
+GM_BIO *GM_BIO_new_file(const char *filename, const char *mode);
+int GM_BIO_read(GM_BIO *bio, void *buf, int len);
+int GM_BIO_write(GM_BIO *bio, const void *buf, int len);
+int GM_BIO_pending(GM_BIO *bio);
+int GM_BIO_reset(GM_BIO *bio);
+int GM_BIO_get_mem_data(GM_BIO *bio, char **pp);
+int GM_BIO_free(GM_BIO *bio);
 
 
 #ifdef __cplusplus

@@ -16,12 +16,12 @@
 
 
 // `bio` is used as a buffer, caller first print `a` into `bio`, and than read from `bio` into buffer
-int i2a_ASN1_INTEGER(BIO *bio, const ASN1_INTEGER *a)
+int gm_i2a_GM_ASN1_INTEGER(GM_BIO *bio, const GM_ASN1_INTEGER *a)
 {
 	size_t i;
 
 	if (!bio || !a) {
-		error_print();
+		gm_error_print();
 		return 0;
 	}
 
@@ -31,10 +31,10 @@ int i2a_ASN1_INTEGER(BIO *bio, const ASN1_INTEGER *a)
 	return 1;
 }
 
-int ASN1_TIME_print(BIO *bio, const ASN1_TIME *tm)
+int GM_ASN1_TIME_print(GM_BIO *bio, const GM_ASN1_TIME *tm)
 {
 	if (!bio || !tm) {
-		error_print();
+		gm_error_print();
 		return 0;
 	}
 

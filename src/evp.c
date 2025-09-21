@@ -16,24 +16,24 @@
 #include <openssl/evp.h>
 
 
-const EVP_MD *EVP_sha1(void) {
+const GM_EVP_MD *GM_EVP_sha1(void) {
 	return "sha1";
 }
 
-const EVP_MD *EVP_sha256(void) {
+const GM_EVP_MD *GM_EVP_sha256(void) {
 	return "sha256";
 }
 
-const EVP_MD *EVP_sm3(void) {
+const GM_EVP_MD *GM_EVP_sm3(void) {
 	return "sm3";
 }
 
-EVP_MD_CTX *EVP_MD_CTX_new(void)
+GM_EVP_MD_CTX *GM_EVP_MD_CTX_new(void)
 {
-	EVP_MD_CTX *md_ctx;
+	GM_EVP_MD_CTX *md_ctx;
 
-	if (!(md_ctx = (EVP_MD_CTX *)malloc(sizeof(*md_ctx)))) {
-		error_print();
+	if (!(md_ctx = (GM_EVP_MD_CTX *)malloc(sizeof(*md_ctx)))) {
+		gm_error_print();
 		return NULL;
 	}
 
@@ -41,45 +41,45 @@ EVP_MD_CTX *EVP_MD_CTX_new(void)
 }
 
 // Do we need to check if md is SM3 or SHA256?			
-int EVP_DigestInit_ex(EVP_MD_CTX *ctx, const EVP_MD *md, ENGINE *engine)
+int GM_EVP_DigestInit_ex(GM_EVP_MD_CTX *ctx, const GM_EVP_MD *md, ENGINE *engine)
 {
-	if (sm3_digest_init(ctx, NULL, 0) != 1) {
-		error_print();
+	if (gm_sm3_gm_digest_init(ctx, NULL, 0) != 1) {
+		gm_error_print();
 		return 0;
 	}
 	return 1;
 }
 
-int EVP_DigestUpdate(EVP_MD_CTX *ctx, const void *d, size_t cnt)
+int GM_EVP_DigestUpdate(GM_EVP_MD_CTX *ctx, const void *d, size_t cnt)
 {
-	if (sm3_digest_update(ctx, d, cnt) != 1) {
-		error_print();
+	if (gm_sm3_gm_digest_update(ctx, d, cnt) != 1) {
+		gm_error_print();
 		return 0;
 	}
 	return 1;
 }
 
-int EVP_DigestFinal_ex(EVP_MD_CTX *ctx, unsigned char *dgst, unsigned int *dgstlen)
+int GM_EVP_DigestFinal_ex(GM_EVP_MD_CTX *ctx, unsigned char *dgst, unsigned int *dgstlen)
 {
-	if (sm3_digest_finish(ctx, dgst) != 1) {
-		error_print();
+	if (gm_sm3_gm_digest_finish(ctx, dgst) != 1) {
+		gm_error_print();
 		return 0;
 	}
 	*dgstlen = 32;
 	return 1;
 }
 
-void EVP_MD_CTX_free(EVP_MD_CTX *ctx)
+void GM_EVP_MD_CTX_free(GM_EVP_MD_CTX *ctx)
 {
 	if (ctx) {
 		free(ctx);
 	}
 }
 
-void EVP_PKEY_free(EVP_PKEY *pkey)
+void GM_EVP_PKEY_free(GM_EVP_PKEY *pkey)
 {
 	if (pkey) {
-		gmssl_secure_clear(pkey, sizeof(EVP_PKEY));
+		gmssl_secure_clear(pkey, sizeof(GM_EVP_PKEY));
 		free(pkey);
 	}
 }

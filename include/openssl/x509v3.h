@@ -7,8 +7,8 @@
  *  http://www.apache.org/licenses/LICENSE-2.0
  */
 
-#ifndef OPENSSL_X509V3_H
-#define OPENSSL_X509V3_H
+#ifndef GM_OPENGM_SSL_X509V3_H
+#define GM_OPENGM_SSL_X509V3_H
 
 
 #ifdef __cplusplus

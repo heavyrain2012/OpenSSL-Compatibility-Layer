@@ -13,29 +13,29 @@
 #include <openssl/crypto.h>
 
 
-void OPENSSL_free(void *p)
+void GM_OPENGM_SSL_free(void *p)
 {
 	if (p) {
 		free(p);
 	}
 }
 
-OPENSSL_INIT_SETTINGS *OPENSSL_INIT_new(void)
+GM_OPENGM_SSL_INIT_SETTINGS *GM_OPENGM_SSL_INIT_new(void)
 {
-	OPENSSL_INIT_SETTINGS *init = NULL;
+	GM_OPENGM_SSL_INIT_SETTINGS *init = NULL;
 
-	if (!(init = (OPENSSL_INIT_SETTINGS *)malloc(sizeof(*init)))) {
-		error_print();
+	if (!(init = (GM_OPENGM_SSL_INIT_SETTINGS *)malloc(sizeof(*init)))) {
+		gm_error_print();
 		return NULL;
 	}
 	init->appname = NULL;
 	return init;
 }
 
-int OPENSSL_INIT_set_config_appname(OPENSSL_INIT_SETTINGS *init, const char *name)
+int GM_OPENGM_SSL_INIT_set_config_appname(GM_OPENGM_SSL_INIT_SETTINGS *init, const char *name)
 {
 	if (!init || !name) {
-		error_print();
+		gm_error_print();
 		return 0;
 	}
 
@@ -43,7 +43,7 @@ int OPENSSL_INIT_set_config_appname(OPENSSL_INIT_SETTINGS *init, const char *nam
 	return 1;
 }
 
-void OPENSSL_INIT_free(OPENSSL_INIT_SETTINGS *init)
+void GM_OPENGM_SSL_INIT_free(GM_OPENGM_SSL_INIT_SETTINGS *init)
 {
 	if (init) {
 		free(init);

@@ -17,22 +17,22 @@
 int main(void)
 {
 	int ret = 1;
-	EVP_MD_CTX *ctx = NULL;
-	unsigned char dgst[EVP_MAX_MD_SIZE];
+	GM_EVP_MD_CTX *ctx = NULL;
+	unsigned char dgst[GM_EVP_MAX_MD_SIZE];
 	unsigned int dgstlen, i;
 
-	if (!(ctx = EVP_MD_CTX_create())) {
+	if (!(ctx = GM_EVP_MD_CTX_create())) {
 		fprintf(stderr, "%s %d\n", __FILE__, __LINE__);
 		goto end;
 	}
 
-	if (EVP_DigestInit_ex(ctx, EVP_sm3(), NULL) != 1) {
+	if (GM_EVP_DigestInit_ex(ctx, GM_EVP_sm3(), NULL) != 1) {
 		goto end;
 	}
-	if (EVP_DigestUpdate(ctx, "abc", 3) != 1) {
+	if (GM_EVP_DigestUpdate(ctx, "abc", 3) != 1) {
 		goto end;
 	}
-	if (EVP_DigestFinal_ex(ctx, dgst, &dgstlen) != 1) {
+	if (GM_EVP_DigestFinal_ex(ctx, dgst, &dgstlen) != 1) {
 		goto end;
 	}
 
@@ -43,6 +43,6 @@ int main(void)
 
 	ret = 0;
 end:
-	EVP_MD_CTX_destroy(ctx);
+	GM_EVP_MD_CTX_destroy(ctx);
 	return ret;
 }
